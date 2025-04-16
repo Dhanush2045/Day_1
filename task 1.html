@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="C:\Users\user\Desktop\DHANUSH\style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="cart">
+      <h2>Shopping Cart <span>3 Items</span></h2>
+      <div class="cart-item">
+        <img src="c:\Users\user\Pictures\Saved Pictures\PIC1.jpg" alt="Fifa 19">
+        <div class="details">
+          <p class="title">Fifa 19</p>
+          <p class="platform">PS4</p>
+          <a href="#" class="remove">Remove</a>
+        </div>
+        <div class="quantity">
+          <button>-</button>
+          <input type="text" value="2">
+          <button>+</button>
+        </div>
+        <div class="price">$46.00</div>
+        <div class="total">$88.00</div>
+      </div>
+
+      <div class="cart-item">
+        <img src="c:\Users\user\Pictures\Saved Pictures\pic2.webp" alt="Glacier White 500GB">
+        <div class="details">
+          <p class="title">Glacier White 500GB</p>
+          <p class="platform">PS4</p>
+          <a href="#" class="remove">Remove</a>
+        </div>
+        <div class="quantity">
+          <button>-</button>
+          <input type="text" value="1">
+          <button>+</button>
+        </div>
+        <div class="price">$249.99</div>
+        <div class="total">$249.99</div>
+      </div>
+
+      <div class="cart-item">
+        <img src="c:\Users\user\Pictures\Saved Pictures\pic3.jpg" alt="Platinum Headset">
+        <div class="details">
+          <p class="title">Platinum Headset</p>
+          <p class="platform">PS4</p>
+          <a href="#" class="remove">Remove</a>
+        </div>
+        <div class="quantity">
+          <button>-</button>
+          <input type="text" value="1">
+          <button>+</button>
+        </div>
+        <div class="price">$119.99</div>
+        <div class="total">$119.99</div>
+      </div>
+
+      <a href="#" class="continue">← Continue Shopping</a>
+    </div>
+
+    <div class="summary">
+      <h2>Order Summary</h2>
+      <div class="summary-item"><span>Items</span><span>$457.98</span></div>
+      <div class="summary-item">
+        <label for="shipping">Shipping</label>
+        <select id="shipping">
+          <option>Standard Delivery- $5.00</option>
+        </select>
+      </div>
+      <div class="summary-item">
+        <label for="promo">Promo Code</label>
+        <input type="text" id="promo" placeholder="Enter your code">
+        <button class="apply">Apply</button>
+      </div>
+      <div class="summary-item total"><span>Total Cost</span><span>$462.98</span></div>
+      <button class="checkout">Checkout</button>
+    </div>
+  </div>
+</body>
+</html>
