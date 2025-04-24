@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Students Journal</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fb;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      background-color: #14365d;
+      color: white;
+      padding: 20px;
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .sidebar h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    .sidebar ul li.active {
+      background-color: #3b82f6;
+      border-radius: 8px;
+      padding-left: 10px;
+    }
+
+    .logout {
+      background: none;
+      border: none;
+      color: white;
+      text-align: left;
+      cursor: pointer;
+      padding-top: 20px;
+      margin-top: auto;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .profile img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+
+    .search-bar {
+      margin: 20px 0;
+    }
+
+    .search-bar input {
+      width: 300px;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    thead {
+      background-color: #e5f1fc;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    footer.footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .footer span{
+      margin-left: 1000px;
+
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>SMART</h2>
+      <nav>
+        <ul>
+          <li>📜Dashboard</li>
+          <li>🎓My classes</li>
+          <li class="active">👨‍🎓Students</li>
+          <li>📆Schedule</li>
+          <li>📩Message</li>
+          <li>🛠️Settings</li>
+        </ul>
+      </nav>
+      <button class="logout">Log out➡️</button>
+    </aside>
+    
+    <main class="main-content">
+      <header>
+        <h3>Students &gt; Journal</h3>
+        <div class="profile">🔔
+          <img src="model.webp" alt="Profile" />
+        </div>
+      </header>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search" />
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox"></th>
+            <th>Name</th>
+            <th>Group</th>
+            <th>Homework</th>
+            <th>Attendance</th>
+            <th>Projects</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><input type="checkbox" />
+          </td><td>Dhanush Uzumaki</td><td>Data Scientists-2</td><td>16/28</td><td>16/28</td><td>9/12</td><td>84/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Thinthanuku Dhina</td><td>Data Scientists-2</td><td>17/28</td><td>17/28</td><td>8/12</td><td>74/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Kadapara Kanishk</td><td>Data Scientists-2</td><td>16/28</td><td>17/28</td><td>7/12</td><td>92/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Jagan Jothis</td><td>Data Scientists-2</td><td>15/28</td><td>12/28</td><td>7/12</td><td>67/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Bullet Raja</td><td>Data Scientists-2</td><td>17/28</td><td>17/28</td><td>9/12</td><td>84/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Matti Mani</td><td>Data Scientists-2</td><td>16/28</td><td>17/28</td><td>9/12</td><td>91/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Bore Govindhan</td><td>Data Scientists-2</td><td>14/28</td><td>17/28</td><td>7/12</td><td>65/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Vijay Kumar IPS</td><td>Data Scientists-2</td><td>15/28</td><td>15/28</td><td>6/12</td><td>52/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Bus Stand Batman</td><td>Data Scientists-2</td><td>16/28</td><td>17/28</td><td>8/12</td><td>73/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Chiko Senthil</td><td>Data Scientists-2</td><td>17/28</td><td>17/28</td><td>9/12</td><td>98/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Mini Kannan</td><td>Data Scientists-2</td><td>16/28</td><td>17/28</td><td>8/12</td><td>82/100</td></tr>
+          <tr><td><input type="checkbox" />
+          </td><td>Suzukhi Rajendran</td><td>Data Scientists-2</td><td>17/28</td><td>16/28</td><td>8/12</td><td>78/100</td></tr>
+        </tbody>
+      </table>
+
+      <footer class="footer">
+        <span>1-12 of 84 items</span>
+        <div class="pagination">&lt; 12 &gt;</div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

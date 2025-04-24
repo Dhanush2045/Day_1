@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+* {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: rgb(141, 141, 195);
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 300px;
+      flex-shrink: 0;
+    }
+
+    .profile {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .profile img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+
+    .profile span {
+      color: #d23434;
+      font-weight: bold;
+    }
+    
+    .task-pill {
+      background: #f0f0f0;
+      padding: 0.6rem 1rem;
+      border-radius: 20px;
+      margin: 0.3rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .pill-dot.red {
+         background: red; 
+        }
+
+    .pill-dot.green {
+         background: green;
+         }
+
+    .pill-dot.yellow {
+        background: orange;
+     }
+
+     .task-item {
+      margin: 0.5rem 0;
+      padding: 0.6rem 1rem;
+      background: #f8f8f8;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .task-item .percent {
+      color: red;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .create-btn {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: blue;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    .form-card input,
+    .form-card textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0 1rem 0;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    .priority-options {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .priority {
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .priority.red { 
+        background: red;
+     }
+
+    .priority.yellow { 
+        background: orange; 
+    }
+
+    .priority.green { 
+        background: green; 
+    }
+
+    .pill-dot.yellow {
+        background: orange;
+     }
+
+    .task-item {
+      margin: 0.5rem 0;
+      padding: 0.6rem 1rem;
+      background: #f8f8f8;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .task-item .percent {
+      color: red;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .create-btn {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: #007bff;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .form-card input,
+    .form-card textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0 1rem 0;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    .priority-options {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .priority {
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .priority.red { 
+        background: red;
+     }
+
+    .priority.yellow { 
+        background: orange; 
+    }
+
+    .priority.green { 
+        background: green; 
+    }
+
+    .subtask-btn {
+      background: #f9b89f;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+
+    textarea {
+      min-height: 60px;
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .add-btn, .edit-btn {
+      background: tomato;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .clear-btn {
+      background: #ccc;
+      color: #444;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+
+</style>
+<body>
+
+    <div class="container">
+        <div class="card dashboard">
+          <div class="profile">
+            <img src="person.jpeg" alt="Profile" />
+            <div>
+              <p>Hello, <span>Bill Gates</span></p>
+              <input type="text" placeholder="Search..." />
+            </div>
+          </div>
+          <h4>Last added</h4>
+          <div class="task-pill">Football Cup training <span class="pill-dot green"></span></div>
+          <div class="task-pill">UI/UX App Design <span class="pill-dot red"></span></div>
+          <h4>Tasks list</h4>
+          <div class="task-item"><span class="percent">75%</span> UI/UX App Design</div>
+          <div class="task-item"><span class="percent">75%</span> View candidates' resumes</div>
+          <div class="task-item"><span class="percent">75%</span> Football Cup training</div>
+          <button class="create-btn">Create task</button>
+        </div>
+    
+        <div class="card form-card">
+          <h2>Create new task</h2>
+          <label>Main task name</label>
+          <input type="text" />
+          <label>Due date</label>
+          <input type="datetime-local" />
+          <label>Choose priority</label>
+          <div class="priority-options">
+            <button class="priority red">High</button>
+            <button class="priority yellow">Medium</button>
+            <button class="priority green">Low</button>
+          </div>
+          <label>Sub-task name</label>
+          <input type="text" />
+          <input type="text" />
+          <button class="subtask-btn">Add sub-task</button>
+          <label>Description</label>
+          <textarea placeholder="Enter a text"></textarea> 
+          <div class="form-buttons">
+            <button class="add-btn">Add task</button>
+            <button class="clear-btn">Clear</button>
+          </div>
+        </div>
+        <div class="card form-card">
+          <h2>Edit task</h2>
+          <label>Main task name</label>
+          <input type="text" value="UI/UX App Design" />
+          <label>Due date</label>
+          <input type="datetime-local" value="2023-04-29T00:30" />
+          <label>Choose priority</label>
+          <div class="priority-options">
+            <button class="priority red">High</button>
+            <button class="priority yellow">Medium</button>
+            <button class="priority green">Low</button>
+          </div>
+          <label>Sub-task name</label>
+          <input type="text" value="Prototyping" />
+          <input type="text" value="Animate the logo" />
+          <button class="subtask-btn">Add sub-task</button>
+          <label>Description</label>
+          <textarea>First I have to animate the logo and later prototyping my design ,It's very important </textarea>
+          <div class="form-buttons">
+            <button class="edit-btn">Edit task</button>
+            <button class="clear-btn">Clear</button>
+          </div>
+        </div>
+      </div>
+    
+</body>
+</html>

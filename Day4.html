@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Length Check</title>
+</head>
+<style>
+
+</style>
+<body>
+    <div class="Middle">
+
+    </div>
+
+  <h2>Enter your password:</h2>
+  <input type="password" id="passwordInput" />
+  <button onclick="checkPassword()">Submit</button>
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value;
+      if (password.length < 8) {
+        alert("Password not accepted!");
+      } else {
+        alert("Password accepted!");
+      }
+    }
+    
+  </script>
+  <h1>RGB Color Generator</h1>
+  <button id="generateColorBtn">Generate Random Color</button>
+  <p id="colorDisplay" style="font-size: 20px;"></p>
+
+  <script>
+      document.getElementById('generateColorBtn').addEventListener('click', function() {
+          // Generate random values for R, G, and B
+          const r = Math.floor(Math.random() * 256);
+          const g = Math.floor(Math.random() * 256);
+          const b = Math.floor(Math.random() * 256);
+
+          // Set the background color to the generated RGB
+          const rgbColor = `rgb(${r}, ${g}, ${b})`;
+          document.body.style.backgroundColor = rgbColor;
+          
+          // Display the RGB value
+          document.getElementById('colorDisplay').textContent = `RGB: ${rgbColor}`;
+      });
+  </script>
+
+</body>
+</html>

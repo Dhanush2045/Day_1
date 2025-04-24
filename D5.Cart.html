@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #f7f5f3;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .left, .right {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .left {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .right {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    h2, h3 {
+      margin-top: 0;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .half {
+      width: 40%;
+
+    }
+
+    .full {
+      width: 100%;
+    }
+
+    .summary {
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+
+    .summary div {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    .summary .total {
+      font-weight: bold;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #2e7062;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .item span {
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .half {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">SPROUT</div>
+    <input type="text" placeholder="Search..." style="padding: 10px; width: 200px;">
+    <div>Bonus: 15% | Julia ▼ | 🛒 Cart: 6</div>
+  </header>
+
+  <div class="container">
+    <div class="left">
+      <h2>Checkout</h2>
+
+      <h3>Personal information</h3>
+      <form>
+        <div class="half">
+          <label>First name</label>
+          <input type="text">
+        </div>
+        <div class="half">
+          <label>Last name</label>
+          <input type="text">
+        </div>
+        <div class="half">
+          <label>Phone</label>
+          <input type="text">
+        </div>
+        <div class="half">
+          <label>Email</label>
+          <input type="email">
+        </div>
+      </form>
+<br><br>
+        <h3>Delivery details</h3>
+        <form>
+        <div class="half">
+          <label>Country / Region</label>
+          <select>
+            <option>United Kingdom (UK)</option>
+            <option>South Africa </option>
+            <option>Denmark</option>
+            <option>India</option>
+            <option>America</option>
+          </select>
+        </div>
+        <div class="half">
+          <label>Town / City</label>
+          <input type="text" >
+        </div>
+        <div class="half">
+          <label>Street</label>
+          <input type="text">
+        </div>
+        <div class="half">
+          <label>Postcode</label>
+          <input type="text">
+        </div>
+        <div class="half">
+          <label>Packaging type</label>
+          <select><option>Without plastic</option></select>
+        </div>
+        <div class="half">
+          <label>Shipping option</label>
+          <select><option>By courier</option></select>
+        </div>
+
+        <div class="full">
+          <label>Card number</label>
+          <input type="text">
+        </div>
+        <div class="half">
+          <label>Expiration date</label>
+          <input type="text">
+        </div>
+        <div class="half">
+          <label>CVV</label>
+          <input type="text">
+        </div>
+      </form>
+    </div>
+  </form>
+    <div class="right">
+      <h3>Your Order</h3>
+      <div class="summary">
+        <div><span>Subtotal:</span><span>$60.30</span></div><br>
+        <div><span>Delivery:</span><span>$8.20</span></div><br>
+        <div class="total"><span>Total:</span><span>$68.50</span></div>
+      </div>
+
+      <button class="btn">Purchase</button><br><br>
+      <div class="cart-items">
+        <div class="item"><span>Jerky persimmon (1kg)</span><span>$8.60</span></div><br>
+        <div class="item"><span>Macadamia (2kg)</span><span>$28.00</span></div><br>
+        <div class="item"><span>Spiced nuts (500g)</span><span>$7.20</span></div><br>
+        <div class="item"><span>Banana (4kg)</span><span>$5.70</span></div><br>
+        <div class="item"><span>Kiwifruit (1kg)</span><span>$4.00</span></div><br>
+        <div class="item"><span>Orange (2kg)</span><span>$6.80</span></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
