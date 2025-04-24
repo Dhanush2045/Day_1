@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course UI</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<style>
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #e6f0f3;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.screen {
+  width: 360px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.header {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-image {
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+  height: 200px;
+}
+
+.mentor {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.tabs span {
+  color: #888;
+  cursor: pointer;
+}
+
+.tabs .active {
+  color: #ff5b5b;
+  border-bottom: 2px solid #ff5b5b;
+  padding-bottom: 5px;
+}
+
+.section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.my-courses .course-card {
+  background: #f3f3f3;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  display: flex;
+  height: 100px;
+}
+
+.my-courses .course-card.active {
+  background: #ffd4d4;
+}
+
+.mentor-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.course-card .title {
+  font-weight: bold;
+}
+
+.progress-info {
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 20px;
+}
+
+.lesson-list .lesson {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.lesson .number {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.lesson .play {
+  background: #ff5b5b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+</style>
+<body>
+  <div class="container">
+    
+    <div class="screen course-details">
+      <div class="header">← Course Details</div>
+      <img src="nissan1.webp" class="course-image" alt="Course"/>
+      <h2>UI UX Design For Beginner</h2>
+      <div class="mentor">
+        <img src="person.jpeg" class="avatar" />
+        <div>
+          <div class="name">Noa</div>
+          <div class="role">UI UX Design Mentor</div>
+        </div>
+      </div>
+      <div class="tabs">
+        <span class="active">Details</span>
+        <span>Lessons</span>
+        <span>Reviews</span>
+      </div>
+      <div class="section">
+        <h3>What You’ll Learn</h3>
+        <ul>
+          <li>Introduction to User Research</li>
+          <ul>
+            <li>Elements of UX</li>
+            <li>Role of research in the UX design process</li>
+            <li>Overview of research methods</li>
+            <li>Reading user personas and empathy maps</li>
+          </ul>
+          <li>Fundamentals of UX Design</li>
+          <ul>
+            <li>Information architecture and sitemaps</li>
+            <li>User journey maps</li>
+            <li>Understanding navigation</li>
+            <li>Overview of grid & pages types</li>
+            <li>Developing low/high fidelity wireframe</li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+
+    <div class="screen my-courses">
+      <div class="header">← My Courses</div>
+      <h3>Progress lesson</h3>
+
+      <div class="course-card active">
+        <div class="mentor-info">
+          <img src="person.jpeg" class="avatar"/>
+          <div>
+            <div class="title">UI UX Design For Beginner</div>
+            <div class="mentor">Noa - UI UX Design Mentor</div>
+          </div>
+        </div>
+        <div class="progress-info">07/25 Progress • 5h,30 mins</div>
+      </div>
+      <br>
+      <div class="course-card">
+        <div class="mentor-info">
+          <img src="model.webp" class="avatar"/>
+          <div>
+            <div class="title">Graphic Design</div>
+            <div class="mentor">May - Graphic Design Mentor</div>
+          </div>
+        </div>
+        <div class="progress-info">12/25 Progress • 7h,30 mins</div>
+      </div>
+
+      <h3>Recent lesson</h3>
+      <div class="lesson-list">
+        <div class="lesson">
+          <div class="number">01</div>
+          <div>
+            <div class="lesson-title"><b>Introduction</b></div>
+            <div class="sub">UI UX Design For Beginner</div>
+          </div>
+          <button class="play">▶</button>
+        </div>
+        <br><br>
+
+        <div class="lesson">
+          <div class="number">02</div>
+          <div>
+            <div class="lesson-title"><b>What is UI UX</b></div>
+            <div class="sub">UI UX Design For Beginner</div>
+          </div>
+          <button class="play">▶</button>
+        </div>
+        <br><br>
+
+        <div class="lesson">
+          <div class="number">03</div>
+          <div>
+            <div class="lesson-title"><b>Design Principles</b></div>
+            <div class="sub">UI UX Design For Beginner</div>
+          </div>
+          <button class="play">▶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
