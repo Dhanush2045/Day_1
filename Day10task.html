@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: 100vh;
+            width: 100%;
+            background-color: bisque;
+        }
+        .screen1 {
+            display: flex;
+            margin-left: 5%;
+            flex-direction: column;
+            width: 20%;
+            border-radius: 20px;
+            border: 1px black solid;
+            background-color: white;
+        }
+        .screen1 h1 {
+            margin-top: 20px;
+            margin-left: 10px;
+            font-size: 30px;
+            color: black;
+        }
+        .screen1 p {
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 16px;
+            color: grey;
+        }
+        #nav {
+            display: flex;
+            flex-direction: inherit;
+        }
+        #pfpic {
+            max-height: 100px;
+            max-width: 60px;
+            position: relative;
+            border-radius: 100%;
+            border: 1px solid black;
+            left: 220px;
+            top: -60px;
+        }
+        #ranking {
+            display: flex;
+            flex-direction: row;
+            margin-left: 15px;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: fit-content;
+            width: 250px;
+            justify-content: space-evenly;
+        }
+        #inside {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .categories {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .category {
+            background: #f6f6f6;
+            padding: 10px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            height: 120px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            
+        }
+        .category img {
+            max-width: 100%;
+            max-height: 80px;
+            margin-bottom: 5px;
+        }
+        .category small {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        .screen2 {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 20px;
+            overflow-y: auto;
+        }
+        .screen2 h1 {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+        .screen2 p {
+            margin-top: 10px;
+            margin-left: 10px;
+            font-size: 16px;
+            color: grey;
+        }
+        .leaderboard {
+            margin: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .top-three {
+            background-color: #4dd0e1;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        .top-three .rank {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .top-three .name {
+            font-size: 18px;
+        }
+        .top-three .score {
+            font-size: 16px;
+        }
+        .top-three .crown {
+            font-size: 30px;
+        }
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 10px 20px;
+            margin: 5px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .leaderboard-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .leaderboard-item .rank {
+            width: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .leaderboard-item .name {
+            flex-grow: 1;
+            font-size: 16px;
+        }
+        .leaderboard-item .score {
+            font-size: 14px;
+            color: #666;
+        }
+        .screen3 {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .quiz-header .close-btn {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .progress-bar {
+            width: 50%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-bar .progress {
+            width: 50%; 
+            height: 100%;
+            background-color: orange;
+        }
+        .quiz-header .progress-text {
+            font-size: 14px;
+        }
+        .timer {
+            position: absolute;
+            right: 20px;
+            top: 50px;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #4dd0e1;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .question {
+            background-color: #e0f7fa;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .option.correct {
+            border-color: #4dd0e1;
+            background-color: #e0f7fa;
+        }
+        .option.incorrect {
+            border-color: #ff6666;
+            background-color: #ffe6e6;
+        }
+        .option .icon {
+            font-size: 20px;
+        }
+        .next-btn {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #4dd0e1;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="screen1">
+            <nav id="nav">
+                <h1>Hi, John</h1>
+                <p>Let's make this day productive</p>
+                <div>
+                    <img src="../daybfr/classic-cheese-burger-with-beef-cutlet-vegetables-onions-isolated-white-background.jpg" id="pfpic">
+                </div>
+            </nav>
+            <div id="ranking">
+                <div id="inside">
+                    <h>Ranking</h>
+                    <p><strong>348</strong></p>
+                </div>
+                <div id="inside-right">
+                    <h>Points</h>
+                    <p><strong>348</strong></p>
+                </div>
+            </div>
+            <h3 style="margin-top: 40px; margin-left: 20px;">Let's play</h3><br>
+            <div class="categories">
+                <div class="category"><img src="" alt=""><br>Sports<br><small>50 questions</small></div>
+                <div class="category"><img src="" alt=""><br>Chemistry<br><small>30 questions</small></div>
+                <div class="category"><img src="" alt=""><br>Math<br><small>95 questions</small></div>
+                <div class="category"><img src="" alt=""><br>History<br><small>128 questions</small></div>
+                <div class="category"><img src="" alt=""><br>Biological</div>
+                <div class="category"><img src="" alt=""><br>Geography</div>
+            </div>
+        </div>
+        <div class="screen2">
+            <nav>
+                <h1 style="position: relative; margin-left: 80px;">Leaderboard</h1>
+                <div class="leaderboard">
+                    <div class="top-three">
+                        <div>
+                            <div class="rank">2</div>
+                            <img src=" " alt="Lennert Niva">
+                            <div class="name">Lennert Niva</div>
+                            <div class="score">120,774</div>
+                        </div>
+                        <div>
+                            <div class="crown">👑</div>
+                            <div class="rank">1</div>
+                            <img src=" " alt="David James">
+                            <div class="name">David James</div>
+                            <div class="score">145,093</div>
+                        </div>
+                        <div>
+                            <div class="rank">3</div>
+                            <img src="" alt="Peter">
+                            <div class="name">Peter</div>
+                            <div class="score">95,876</div>
+                        </div>
+                    </div>
+                    <div class="leaderboard-item">
+                        <div class="rank">4</div>
+                        <img src="" alt="Smith Carol">
+                        <div class="name">Smith Carol</div>
+                        <div class="score">91,736</div>
+                    </div>
+                    <div class="leaderboard-item">
+                        <div class="rank">5</div>
+                        <img src="" alt="Stina Gunnarsdottir">
+                        <div class="name">Stina Gunnarsdottir</div>
+                        <div class="score">90,281</div>
+                    </div>
+                    <div class="leaderboard-item">
+                        <div class="rank">6</div>
+                        <img src="" alt="Benedikt Safyulin">
+                        <div class="name">Benedikt Safyulin</div>
+                        <div class="score">88,463</div>
+                    </div>
+                    <div class="leaderboard-item">
+                        <div class="rank">7</div>
+                        <img src=" " alt="Gabriel Soares">
+                        <div class="name">Gabriel Soares</div>
+                        <div class="score">85,287</div>
+                    </div>
+                    <div class="leaderboard-item">
+                        <div class="rank">8</div>
+                        <img src="" alt="Yahiro Ayuko">
+                        <div class="name">Yahiro Ayuko</div>
+                        <div class="score">84,009</div>
+                    </div>
+                    <div class="leaderboard-item">
+                        <div class="rank">9</div>
+                        <img src="" alt="Saami Al Samad">
+                        <div class="name">Saami Al Samad</div>
+                        <div class="score">83,292</div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="screen3">
+            <div class="quiz-header">
+                <span class="close-btn">×</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <span class="progress-text">5/10</span>
+            </div>
+            <div class="timer" style="right: 220px;">30</div>
+            <div class="question">
+                What is the most popular sport through the world?
+            </div>
+            <div class="options">
+                <div class="option">
+                    Volleyball
+                    <span class="icon"></span>
+                </div>
+                <div class="option correct">
+                    Football
+                
+                </div>
+                <div class="option incorrect">
+                    Basketball
+                    
+                </div>
+                <div class="option">
+                    Badminton
+                    <span class="icon"></span>
+                </div>
+            </div>
+            <button class="next-btn">Next</button>
+        </div>
+    </div>
+</body>
+</html>
