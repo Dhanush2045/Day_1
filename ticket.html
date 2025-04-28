@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+        }
+        .header {
+            background: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+        .filters {
+            width: 20%;
+            background: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .main-content {
+            width: 80%;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+        }
+        .sort-bar {
+            background: #fff;
+            padding: 10px;
+            
+            margin-bottom: 15px;
+            
+        }
+        .train-card {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .train-card h3 {
+            margin: 0 0 10px;
+        }
+        .train-times {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .seat-info {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .seat {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            flex: 1;
+        }
+        .filters h3, .filters label {
+            margin-top: 10px;
+            display: block;
+        }
+        .small-text {
+            font-size: 12px;
+            color: #999;
+        }
+        .regret {
+            color: red;
+        }
+        .waiting {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div><strong>NEW DELHI (NDLS)</strong> ➔ <strong>MUMBAI CENTRAL (MMCT)</strong></div>
+    <div>Tue, 29 Apr 2025</div>
+</div>
+
+<div class="container">
+    <div class="filters">
+        <h3>Filters</h3>
+        <button>Reset All</button>
+
+        <h4>Quota</h4>
+        <label><input type="radio" name="quota"> General</label>
+        <label><input type="radio" name="quota"> Tatkal</label>
+        <label><input type="radio" name="quota"> Ladies</label>
+        <label><input type="radio" name="quota"> Senior Citizen/Lower Berth</label>
+
+        <h4>Origin Station</h4>
+        <label><input type="checkbox"> NZM</label>
+        <label><input type="checkbox"> NDLS</label>
+        <label><input type="checkbox"> DEE</label>
+        <label><input type="checkbox"> SZM</label>
+        <label><input type="checkbox"> ANDI</label>
+
+        <h4>Destination Station</h4>
+        <label><input type="checkbox"> MMCT</label>
+        <label><input type="checkbox"> CSMT</label>
+        <label><input type="checkbox"> PNVL</label>
+        <label><input type="checkbox"> BDTS</label>
+    </div>
+
+    <div class="main-content">
+        <div class="sort-bar">
+            Sort by: 
+            <strong>Departure ↑</strong> | Duration | Arrival
+        </div>
+
+        <div class="train-card">
+            <h3>12904 - GOLDEN TEMPLE M</h3>
+            <div class="train-times">04:00 NZM ➔ 23:35 MMCT (19h 35m)</div>
+
+            <div class="seat-info">
+                <div class="seat">
+                    <div>2A <br> ₹2335</div>
+                    <div class="regret">REGRET</div>
+                    <div class="small-text">No More Booking</div>
+                </div>
+                <div class="seat">
+                    <div>3A <br> ₹1630</div>
+                    <div class="regret">REGRET</div>
+                    <div class="small-text">No More Booking</div>
+                </div>
+                <div class="seat">
+                    <div>SL <br> ₹620</div>
+                    <div class="regret">REGRET</div>
+                    <div class="small-text">No More Booking</div>
+                </div>
+                <div class="seat">
+                    <div>1A <br> ₹3955</div>
+                    <div class="waiting">RLWL6/WL4</div>
+                    <div class="small-text">47% Chance</div>
+                </div>
+            </div>
+            <div class="small-text" style="margin-top: 10px;">Check 6 days availability</div>
+        </div>
+
+        <div class="train-card">
+            <h3>12138 - PUNJAB MAIL</h3>
+            <div class="train-times">05:10 NDLS ➔ 07:35 CSMT (26h 25m)</div>
+
+            <div class="seat-info">
+                <div class="seat">
+                    <div>2A <br> ₹2490</div>
+                    <div class="waiting">RLWL19/WL13</div>
+                    <div class="small-text">43% Chance</div>
+                </div>
+                <div class="seat">
+                    <div>3A <br> ₹1735</div>
+                    <div class="waiting">RLWL52/WL32</div>
+                    <div class="small-text">38% Chance</div>
+                </div>
+                <div class="seat">
+                    <div>SL <br> ₹665</div>
+                    <div class="waiting">RLWL72/WL53</div>
+                    <div class="small-text">35% Chance</div>
+                </div>
+                <div class="seat">
+                    <div>1A <br> ₹4230</div>
+                    <div class="waiting">RLWL1/WL1</div>
+                    <div class="small-text">63% Chance</div>
+                </div>
+            </div>
+            <div class="small-text" style="margin-top: 10px;">Check 6 days availability</div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

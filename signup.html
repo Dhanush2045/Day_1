@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #5cb85c;
+        border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #4cae4c;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .password-hint {
+        font-size: small;
+        color: gray;
+    }  
+</style>
+<body>
+    <div class="container">
+        <h2>Signup Form</h2>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <div class="password-hint" id="passwordHint">
+                   
+                </div>
+                <span id="passwordError" class="error"></span>
+                <div class="password-strength" id="passwordStrength"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword"
+                    name="confirmPassword" required>
+                <span id="confirmPasswordError" class="error"></span>
+            </div>
+            <button type="submit">Signup</button>
+        </form>    
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const passwordInput = document.getElementById('password');
+        const passwordHint = document.getElementById('passwordHint');
+        const passwordStrength = document.getElementById('passwordStrength');
+        const passwordError = document.getElementById('passwordError');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+        passwordInput.addEventListener('input', function () {
+            const password = passwordInput.value;
+            let strength = 0;
+            passwordHint.innerHTML = '';
+
+            if (password.length < 6) {
+                strength = 0;
+                passwordHint.innerHTML = 'Password is too short.';
+            } else {
+                if (/[a-z]/.test(password)) strength++;
+                if (/[A-Z]/.test(password)) strength++;
+                if (/\d/.test(password)) strength++;
+                if (/[^a-zA-Z\d]/.test(password)) strength++;
+            }
+
+            switch (strength) {
+                case 0:
+                    passwordStrength.innerHTML = '<div class="weak"></div>';
+                    break;
+                case 1:
+                    passwordStrength.innerHTML = '<div class="weak"></div>';
+                    break;
+                case 2:
+                    passwordStrength.innerHTML = '<div class="medium"></div>';
+                    break;
+                case 3:
+                    passwordStrength.innerHTML = '<div class="strong"></div>';
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        confirmPasswordInput.addEventListener('input', function () {
+            if (confirmPasswordInput.value !== passwordInput.value) {
+                confirmPasswordError.innerHTML = 'Passwords do not match.';
+            } else {
+                confirmPasswordError.innerHTML = '';
+            }
+        });
+
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                alert('Passwords do not match!');
+            } else {
+                alert('Signup successful!');
+            }
+        });
+    });
+</script>
+</html>

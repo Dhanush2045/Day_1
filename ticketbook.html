@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Availability</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .filters {
+            width: 20%;
+            background: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .reset-btn {
+            background: none;
+            border: none;
+            color: red;
+            cursor: pointer;
+            float: right;
+            margin-top: -35px;
+        }
+
+        .filters h4 {
+            margin-top: 20px;
+        }
+
+        .filters label {
+            display: block;
+            margin-top: 8px;
+        }
+
+        .main-content {
+            width: 80%;
+            padding: 20px;
+        }
+
+        .sort-bar {
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .train-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .train-times {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            color: gray;
+        }
+
+        .tab.active {
+            color: red;
+            border-bottom: 2px solid red;
+        }
+
+        .availability {
+            margin-top: 10px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .date {
+            width: 25%;
+            font-weight: bold;
+        }
+
+        .status {
+            width: 45%;
+            font-size: 14px;
+        }
+
+        .status span {
+            display: block;
+            font-size: 12px;
+            color: orange;
+        }
+
+        .status.regret {
+            color: red;
+        }
+
+        .status.regret span {
+            color: red;
+        }
+
+        .book-btn {
+            padding: 8px 15px;
+            border: 1px solid red;
+            background: none;
+            color: red;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .book-btn.disabled {
+            border: 1px solid lightgray;
+            color: lightgray;
+            cursor: not-allowed;
+        }
+
+        .hide-link {
+            color: red;
+            font-size: 14px;
+            text-align: right;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div><strong>NEW DELHI (NDLS)</strong> ➔ <strong>MUMBAI CENTRAL (MMCT)</strong></div>
+    <div>Tue, 29 Apr 2025</div>
+</div>
+
+<div class="container">
+    <div class="filters">
+        <h3>Filters</h3>
+        <button class="reset-btn">RESET ALL</button>
+
+        <h4>Quota</h4>
+        <label><input type="radio" name="quota"> General</label>
+        <label><input type="radio" name="quota"> Tatkal</label>
+        <label><input type="radio" name="quota"> Ladies</label>
+        <label><input type="radio" name="quota"> Senior Citizen/Lower Berth</label>
+
+        <h4>Origin Station</h4>
+        <label><input type="checkbox"> NZM</label>
+        <label><input type="checkbox"> NDLS</label>
+        <label><input type="checkbox"> DEE</label>
+        <label><input type="checkbox"> SZM</label>
+        <label><input type="checkbox"> ANDI</label>
+
+        <h4>Destination Station</h4>
+        <label><input type="checkbox"> MMCT</label>
+        <label><input type="checkbox"> CSMT</label>
+        <label><input type="checkbox"> PNVL</label>
+        <label><input type="checkbox"> BDTS</label>
+        <label><input type="checkbox"> LTT</label>
+    </div>
+
+    <div class="main-content">
+        <div class="sort-bar">
+            Sort by: 
+            <strong>Departure ↑</strong> | Duration | Arrival
+        </div>
+
+        <div class="train-card">
+            <h3>12904 - GOLDEN TEMPLE M</h3>
+            <div class="train-times">04:00 NZM ➔ 23:35 MMCT (19h 35m)</div>
+
+            <div class="tabs">
+                <span class="tab active">2A - Second AC</span>
+                <span class="tab">3A - Third AC</span>
+                <span class="tab">SL - Sleeper</span>
+                <span class="tab">1A - First AC</span>
+            </div>
+
+            <div class="availability">
+                <div class="row">
+                    <div class="date">Tue, 29 Apr</div>
+                    <div class="status waiting">RLWL22/WL17 <span>41% Chance</span></div>
+                    <button class="book-btn">BOOK ₹ 2335</button>
+                </div>
+                <div class="row">
+                    <div class="date">Wed, 30 Apr</div>
+                    <div class="status regret">REGRET <span>No More Booking</span></div>
+                    <button class="book-btn disabled" disabled>BOOK ₹ 2335</button>
+                </div>
+                <div class="row">
+                    <div class="date">Thu, 01 May</div>
+                    <div class="status waiting">RLWL27/WL16 <span>48% Chance</span></div>
+                    <button class="book-btn">BOOK ₹ 2335</button>
+                </div>
+                <div class="row">
+                    <div class="date">Fri, 02 May</div>
+                    <div class="status waiting">RLWL25/WL13 <span>53% Chance</span></div>
+                    <button class="book-btn">BOOK ₹ 2335</button>
+                </div>
+                <div class="row">
+                    <div class="date">Sat, 03 May</div>
+                    <div class="status waiting">RLWL12/WL11 <span>56% Chance</span></div>
+                    <button class="book-btn">BOOK ₹ 2335</button>
+                </div>
+                <div class="row">
+                    <div class="date">Sun, 04 May</div>
+                    <div class="status regret">REGRET <span>No More Booking</span></div>
+                    <button class="book-btn disabled" disabled>BOOK ₹ 2335</button>
+                </div>
+            </div>
+
+            <div class="hide-link">Hide 6 days availability</div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
