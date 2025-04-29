@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbhiBus Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header img {
+            height: 30px;
+            vertical-align: middle;
+        }
+        .header .trust-badge {
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .header nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .header nav a:hover {
+            text-decoration: underline;
+        }
+        .search-bar {
+            background-color: #f5f5f5;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .search-bar .route {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .search-bar input[type="date"] {
+            padding: 5px;
+            margin: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-bar .date-options span {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .search-bar button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .search-bar button:hover {
+            background-color: #d32f2f;
+        }
+        .container {
+            display: flex;
+            margin: 10px;
+            gap: 10px;
+        }
+        .filters {
+            width: 20%;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+        .bus-list {
+            width: 80%;
+        }
+        .filters h3 {
+            margin: 0 0 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .filters h3 span {
+            color: #f44336;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .filters h4 {
+            margin: 10px 0 5px 0;
+            font-size: 16px;
+        }
+        .filters label {
+            display: block;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .filters input[type="range"] {
+            width: 100%;
+        }
+        .filters .price-range {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .filter-banners {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .filter-banners .banner {
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 12px;
+            flex: 1;
+            min-width: 120px;
+        }
+        .sort-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .sort-bar span {
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .sort-bar span:hover {
+            color: #f44336;
+        }
+        .sort-bar .bus-count {
+            color: #f44336;
+            font-weight: bold;
+        }
+        .bus-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bus-item .details {
+            flex: 1;
+        }
+        .bus-item h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+        .bus-item p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .bus-item .rating {
+            color: #f44336;
+        }
+        .bus-item .price {
+            font-weight: bold;
+            text-align: right;
+        }
+        .bus-item button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .bus-item button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <img src="logo.png" alt="AbhiBus Logo">
+            <span class="trust-badge">Trusted by 5 Crore+ Indians</span>
+        </div>
+        <nav>
+            <a href="#" aria-label="Buses">BUSES</a>
+            <a href="#" aria-label="Flights">FLIGHTS</a>
+            <a href="#" aria-label="Trains">TRAINS</a>
+            <a href="#" aria-label="Hotels">HOTELS</a>
+            <a href="#" aria-label="Offers">Offers</a>
+            <a href="#" aria-label="Track Ticket">Track Ticket</a>
+            <a href="#" aria-label="Need Help">Need Help?</a>
+            <a href="#" aria-label="Login or Signup">LOGIN/SIGNUP</a>
+        </nav>
+    </div>
+
+    <div class="search-bar">
+        <div>
+            <span class="route">Hyderabad</span> ↔
+            <span class="route">Bangalore</span>
+            <input type="date" value="2025-04-27" aria-label="Select travel date">
+            <span class="date-options">Today</span>
+            <span class="date-options">Tomorrow</span>
+        </div>
+        <button aria-label="Search for buses">Search</button>
+    </div>
+
+    <div class="container">
+        <div class="filters">
+            <h3>Filters <span>CLEAR ALL</span></h3>
+            <div class="filter-banners">
+                <div class="banner">ZINGBUS Plus</div>
+                <div class="banner">IntraCity SmartBus</div>
+                <div class="banner">ABHI ASSURED</div>
+                <div class="banner">HIGHEST RATED Buses</div>
+                <div class="banner">FLASH OFFER</div>
+            </div>
+            <div>
+                <h4>Bus Type</h4>
+                <label><input type="checkbox" aria-label="AC buses"> AC</label>
+                <label><input type="checkbox" aria-label="Sleeper buses"> Sleeper</label>
+                <label><input type="checkbox" aria-label="Seater buses"> Seater</label>
+                <label><input type="checkbox" aria-label="Non-AC buses"> NON-AC</label>
+            </div>
+            <div>
+                <h4>Price Range</h4>
+                <input type="range" min="674" max="3999" value="674" aria-label="Price range filter">
+                <div class="price-range">
+                    <span>₹674</span>
+                    <span>₹3999</span>
+                </div>
+            </div>
+            <div>
+                <h4>Departure Time</h4>
+                <label><input type="checkbox" aria-label="Before 10 AM"> Before 10 AM</label>
+                <label><input type="checkbox" aria-label="10 AM to 5 PM"> 10 AM - 5 PM</label>
+                <label><input type="checkbox" aria-label="5 PM to 11 PM"> 5 PM - 11 PM</label>
+                <label><input type="checkbox" aria-label="After 11 PM"> After 11 PM</label>
+            </div>
+        </div>
+
+        <div class="bus-list">
+            <div class="sort-bar">
+                <span>Sort by:</span>
+                <span>Price ↑</span>
+                <span>Seats ↑</span>
+                <span>Ratings ↑</span>
+                <span>Arrival Time ↑</span>
+                <span>Departure Time ↑</span>
+                <span class="bus-count">SHOWING 241 Buses on this route</span>
+            </div>
+
+            <div class="bus-item">
+                <div class="details">
+                    <h4>TSRTC - Telangana State Road Transport Corporation</h4>
+                    <p>23 Buses, 643 Seats Available</p>
+                    <p>⭐ 3.9 <span class="rating">1.88K</span></p>
+                </div>
+                <div class="price">
+                    From ₹761
+                    <button aria-label="View buses for TSRTC">View Buses</button>
+                </div>
+            </div>
+
+            <div class="bus-item">
+                <div class="details">
+                    <h4>Yolo Bus - Bharat Benz AC Sleeper (2 + 1)</h4>
+                    <p>00:15 Hyderabad → 11:49 Bangalore (12:04 hr)</p>
+                    <p>⭐ 4.6 <span class="rating">4,252</span> | 5+ Amenities</p>
+                </div>
+                <div class="price">
+                    From ₹1,030
+                    <button aria-label="Select seats for Yolo Bus">Select Seats</button>
+                </div>
+            </div>
+
+            <div class="bus-item">
+                <div class="details">
+                    <h4>OLA Bus - Kotak BELL AC Sleeper</h4>
+                    <p>00:15 Kerala → 11:49 Chennai (12:04 hr)</p>
+                    <p>⭐ 4.5 <span class="rating">4,450</span> | 5+ Amenities</p>
+                </div>
+                <div class="price">
+                    From ₹1,200
+                    <button aria-label="Select seats for Yolo Bus">Select Seats</button>
+                </div>
+            </div>
+
+            <div class="bus-item">
+                <div class="details">
+                    <h4>MOGO Bus - LOOT SEEK AC Sleeper</h4>
+                    <p>01:15 Kolkata → 11:49 Chennai (12:04 hr)</p>
+                    <p>⭐ 4.0 <span class="rating">3,450</span> | 5+ Amenities</p>
+                </div>
+                <div class="price">
+                    From ₹1,120
+                    <button aria-label="Select seats for Yolo Bus">Select Seats</button>
+                </div>
+            </div>
+
+
+            <div class="bus-item">
+                <div class="details">
+                    <h4>SL Travels - 2+1, Sleeper, NON-AC</h4>
+                    <p>19:00 Hyderabad → 10:00 Bangalore (05:00 hr)</p>
+                    <p>⭐ 4.3 <span class="rating">1,823</span> | 4+ Amenities</p>
+                </div>
+                <div class="price">
+                    From ₹1,509
+                    <button aria-label="Select seats for SL Travels">Select Seats</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
