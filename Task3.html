@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jully Baby Store</title>
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, rgb(164, 244, 243), #d7e4e9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  background: none;
+  padding: 40px;
+}
+
+.panel {
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #00b3a4;
+  font-weight: 800;
+}
+
+p {
+  font-size: 14px;
+  color: #444;
+  margin: 10px 0;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+input {
+  padding: 12px 15px;
+  border: none;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.filled {
+  background-color: #38c3b5;
+  color: white;
+}
+
+.btn.outlined {
+  background-color: transparent;
+  border: 2px solid #38c3b5;
+  color: #38c3b5;
+}
+
+.forgot {
+  width: 100%;
+  text-align: right;
+}
+
+.forgot a {
+  font-size: 12px;
+  color: #888;
+  text-decoration: none;
+}
+
+.social-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-login p {
+  color: #999;
+  font-size: 13px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.icons img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.switch {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #666;
+}
+
+.switch a {
+  color: #00b3a4;
+  font-weight: 600;
+  text-decoration: none;
+}
+</style>
+<body>
+  <div class="container">
+    <div class="panel welcome-panel">
+      <img src="logo.png" alt="Jully Baby Store Logo" class="logo" />
+      <button class="btn filled" style="margin-top: 150px;">Login</button>
+      <button class="btn outlined" style="margin-top: 20px;">Register</button>
+    </div>
+
+    <div class="panel login-panel">
+      <img src="logo.png" alt="Jully Baby Store Logo" class="logo" />
+      <h2>Welcome back!</h2>
+      <p>Glad to see you, Again!</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required />
+        <input type="password" placeholder="Enter your password" required />
+        <div class="forgot">
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn filled">Login</button>
+      </form>
+      <div class="social-login">
+        <p>Or Login with</p>
+        <div class="icons">
+          <img src="facebook.avif" alt="Facebook"/>
+          <img src="googlr.png" alt="Google"/>
+          <img src="apple.jpg" alt="Apple"/>
+        </div>
+      </div>
+      <p class="switch">Don't have an account? <a href="#">Register Now</a></p>
+    </div>
+
+    <div class="panel register-panel">
+      <img src="logo.png" alt="Jully Baby Store Logo" class="logo" />
+      <h2>Hello!</h2>
+      <p>Register to get started</p>
+      <form>
+        <input type="text" placeholder="Username" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Confirm password" required />
+        <button type="submit" class="btn filled">Register</button>
+      </form>
+      <div class="social-login">
+        <p>Or Register with</p>
+        <div class="icons">
+          <img src="facebook.avif" alt="Facebook"/>
+          <img src="googlr.png" alt="Google"/>
+          <img src="apple.jpg" alt="Apple"/>
+        </div>
+      </div>
+      <p class="switch">Already have an account? <a href="#">Login Now</a></p>
+    </div>
+  </div>
+</body>
+</html>
+
