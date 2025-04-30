@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learnify Signup</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .form-container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 420px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .back-link {
+      font-size: 14px;
+      text-decoration: none;
+      color: #555;
+    }
+
+    .step {
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .progress-bar {
+      height: 4px;
+      background-color: #2563eb;
+      width: 33%;
+      border-radius: 2px;
+      margin-top: 5px;
+    }
+
+    h2 {
+      margin: 15px 0;
+      font-size: 24px;
+      color: #111;
+    }
+
+    .role-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 10px;
+      background-color: #f1f5f9;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .tab.active {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    .continue-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .or-divider {
+      text-align: center;
+      margin: 20px 0 10px;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .social-login {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .google-btn,
+    .facebook-btn {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .signin-text {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .signin-text a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <div class="logo">
+        <h2>📘 Learnify</h2>
+        <a href="#" class="back-link">← Back to Home</a>
+      </div>
+      <div class="step">
+        <p>Step 1 of 3</p>
+        <div class="progress-bar"></div>
+      </div>
+      <h2>Create an account</h2>
+
+      <div class="role-tabs">
+        <button class="tab active">Student</button>
+        <button class="tab">Professional</button>
+        <button class="tab">Instructor</button>
+      </div>
+
+      <form>
+        <label>Full Name*</label>
+        <input type="text" placeholder="Kamalesh Roy" />
+
+        <label>Email*</label>
+        <input type="email" placeholder="kamaleshroy32@gmail.com" />
+
+        <label>Password*</label>
+        <input type="password" placeholder="Enter your password" />
+
+        <label>Confirm Password*</label>
+        <input type="password" placeholder="Confirm your password" />
+
+        <button type="submit" class="continue-btn">Continue</button>
+
+        <div class="or-divider">or sign up with</div>
+
+        <div class="social-login">
+          <button class="google-btn">Google</button>
+          <button class="facebook-btn">Facebook</button>
+        </div>
+
+        <p class="signin-text">
+          Already have an account? <a href="#">Sign in</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
